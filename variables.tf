@@ -4,10 +4,7 @@ variable "service_principal_name" {
 
   validation {
     condition     = can(regex("^[[:alpha:]][a-zA-Z0-9|-]{3,}[a-zA-Z0-9]$", var.service_principal_name))
-    error_message = <<EOF
-    The service_principal_name must be at least 5 characters, composed of letters, numbers, and hyphens, 
-    start with a letter, and not end with a hyphen.
-EOF
+    error_message = "The service_principal_name must be at least 5 characters, composed of letters, numbers, and hyphens, start with a letter, and not end with a hyphen."
   }
 }
 
